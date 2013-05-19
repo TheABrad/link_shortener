@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Link Shortener</title>
+  <link href="main.css" rel="stylesheet" type="text/css" media="all">
+  
+</head>
+<body>
+  <div class="container">
+    <h1>Link Shortener</h1>
+    <form method="post">
+       <input type="text" value="<% h(params[:url]) %>" name="url" id="url" />
+       <input type="submit" value="Shorten" id="submit" placeholder="Paste a link"/>
+    </form>
+    <div class="clear"></div>
+    <% if @shortcode %>
+    <div class="result">
+      Your shortened URL is:
+      <a href="/<%= @shortcode %>">http://linkshort.com/<%= @shortcode %></a>
+    </div>
+    <% end %>
+  </div>
+</body>
+</html>
